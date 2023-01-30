@@ -1,38 +1,167 @@
-.App {
+body {
+  background-image: linear-gradient(black, black, black, black, black, black, black, black, black, #d4119d);
+  background-attachment: fixed;
+}
+
+.btn-grad {
+  background-image: linear-gradient(to right, #E55D87 0%, #5FC3E4 51%, #E55D87 100%);
+  margin: 10px;
+  padding: 10px 35px;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
   color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  border: none;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-grad:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+.card-style {
+  background-color: rgba(89, 195, 233, 0) !important;
+  color: white;
+  box-shadow: 0 0 20px rgb(83, 178, 219) !important;
+  border-radius: 15px !important;
+  margin-top: 50px;
+  border: solid 1px rgb(83, 178, 219) !important;
+
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+/* Flip Cards CSS */
+.card-container {
+  display: grid;
+  perspective: 700px;
+}
+
+.card-flip {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  grid-template-areas: "frontAndBack";
+  transform-style: preserve-3d;
+  transition: all 0.7s ease;
+}
+
+.card-flip div {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.front {
+  grid-area: frontAndBack;
+}
+
+.back {
+  grid-area: frontAndBack;
+  transform: rotateY(-180deg);
+}
+
+input[type='checkbox']:checked+.card-container .card-flip {
+  transform: rotateY(180deg);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
+
+.block {
+  position: relative;
+  width: 100%;
+  background: black;
+  border-radius: 25px;
+}
+
+.block:before,
+.block:after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  border-radius: 25px;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094,
+      #0000ff, #00ff00, #ffff00, #ff0000);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+  0% {
+    background-position: 0 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  50% {
+    background-position: 400% 0;
   }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.block:after {
+  filter: blur(50px);
+}
+
+/* button hover */
+
+.btnH:hover {
+  border: 1px solid rgb(232, 24, 218) !important;
+  box-shadow: 0 0 15px rgb(232, 24, 218) !important;
+}
+
+/* keep button pressed style  */
+
+.btnH:active,
+.btnH:focus {
+  border: 1px solid rgb(232, 24, 218) !important;
+  box-shadow: 0 0 15px rgb(232, 24, 218) !important;
+}
+
+/* make text gradient */
+
+.gR {
+  font-weight: 500 !important;
+  background: -webkit-linear-gradient(right, rgb(53, 221, 230), rgb(232, 21, 218));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* make text bit whiter */
+
+.tW {
+  color: rgba(62, 233, 207, 0.49);
+}
+
+.tR {
+  color: rgba(255, 0, 0, 0.633);
+}
+
+.matrix{
+  position: relative;
+  animation: myfirst 10s;
+  animation-iteration-count:infinite;
+  animation-direction: alternate;
+}
+
+@keyframes myfirst {
+  0%   {background: transparent; left: 0px; top: 0px;}
+  25%  {background: transparent; left: auto; top: 0px;}
+  100% {background: transparent; left: 0px; top: 0px;}
 }

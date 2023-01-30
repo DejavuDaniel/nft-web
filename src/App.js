@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import ParticlesBg from 'particles-bg';
+import NavMeniu from './Nav/NavMeniu';
+import Header from './Header/Header';
+import Body1 from './Body1/Body1';
+import InfoTab from './InfoTab/InfoTab';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavMeniu />
+      <Header />
+      <Body1 />
+      <InfoTab />
+      <ParticlesBg color="#d3d3d3" num={1} type="ircle" bg={true} />
+    </>
   );
 }
 
 export default App;
+
+//"color"
+//"ball"
+//"lines"
+//"thick"
+//"circle"
+//"cobweb"
+//"polygon"
+//"square"
+//"tadpole"
+//"fountain"
+//"random"
+//"custom"
